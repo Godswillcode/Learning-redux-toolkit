@@ -24,10 +24,19 @@ const PostList = () => {
         {post.list.map((item) => {
           return (
             <div key={item.id}>
-               <div style={{border: "1px solid red", display: "inline-block", padding: 5, margin: "10px 0"}}>
-               <h4>{item.title}</h4>
-             <Link to={`/posts/${item.id}`}><button>View post</button></Link>
-               </div>
+              <div
+                style={{
+                  border: "1px solid red",
+                  display: "inline-block",
+                  padding: 5,
+                  margin: "10px 0",
+                }}
+              >
+                <h4>{item.title}</h4>
+                <Link to={`/posts/${item.id}`}>
+                  <button>View post</button>
+                </Link>
+              </div>
             </div>
           );
         })}
