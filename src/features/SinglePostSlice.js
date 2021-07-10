@@ -7,20 +7,20 @@ export const getSinglePost = createAsyncThunk("posts/getPosts", async ({postId})
 const SinglePostsSlice = createSlice({
   name: "singlePosts",
   initialState: {
-    list: [],
+    list: {id: null, title: ""},
     status: null,
   },
   extraReducers: {
-    //   [getPosts.pending]: (state, action) => {
-    //       state.status = "loading"
-    //   },
-    //   [getPosts.fulfilled]: (state, {payload}) => {
-    //       state.list = payload
-    //     state.status = "success"
-    // },
-    // [getPosts.rejected]: (state, action) => {
-    //     state.status = "failed"
-    // },
+      [getPosts.pending]: (state, action) => {
+          state.status = "loading"
+      },
+      [getPosts.fulfilled]: (state, {payload}) => {
+          state.list = payload
+        state.status = "success"
+    },
+    [getPosts.rejected]: (state, action) => {
+        state.status = "failed"
+    },
   },
 });
 
