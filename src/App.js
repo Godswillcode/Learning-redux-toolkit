@@ -8,9 +8,9 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/" component={PostList}/>
-          <Route exact path="/posts/:postId" component={SinglePostPage}/>
-           <Route>404</Route>
+          <Route exact path="/" component={PostList} />
+          <Route exact path="/posts/:postId" component={SinglePostPage} />
+          <Route>404</Route>
         </Switch>
       </div>
     </Router>
