@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getSinglePost = createAsyncThunk("posts/getPosts", async ({postId}) => {
+export const getSinglePost = createAsyncThunk("posts/getPosts", async (postId) => {
   return fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`).then((res) => res.json());
 });
 
@@ -15,6 +15,7 @@ const SinglePostsSlice = createSlice({
           state.status = "loading"
       },
       [getSinglePost.fulfilled]: (state, {payload}) => {
+        console.log("payload is",payload);
           state.list = payload
         state.status = "success"
     },
