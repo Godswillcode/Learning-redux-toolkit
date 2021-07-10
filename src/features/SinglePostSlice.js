@@ -11,14 +11,14 @@ const SinglePostsSlice = createSlice({
     status: null,
   },
   extraReducers: {
-      [getPosts.pending]: (state, action) => {
+      [getSinglePost.pending]: (state, action) => {
           state.status = "loading"
       },
-      [getPosts.fulfilled]: (state, {payload}) => {
+      [getSinglePost.fulfilled]: (state, {payload}) => {
           state.list = payload
         state.status = "success"
     },
-    [getPosts.rejected]: (state, action) => {
+    [getSinglePost.rejected]: (state, action) => {
         state.status = "failed"
     },
   },
