@@ -5,7 +5,7 @@ export const getPosts = createAsyncThunk("posts/getPosts", async ({limit}) => {
 });
 
 const PostsSlice = createSlice({
-  name: "posts",
+  name: "myPost",
   initialState: {
     posts: [],
     status: null,

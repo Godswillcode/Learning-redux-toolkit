@@ -8,7 +8,7 @@ const SinglePostPage = () => {
   const dispatch = useDispatch();
 
   const singlePost = useSelector((state) => state.singlePost.list);
-  const postStatus = useSelector((state) => state.posts.status);
+  const postStatus = useSelector((state) => state.singlePost.status);
 
   console.log(postStatus);
 
@@ -35,6 +35,8 @@ const SinglePostPage = () => {
     <div>
       <h2>hello</h2>
       {myContent}
+
+      <h4>The end of single page</h4>
     </div>
   );
 };
