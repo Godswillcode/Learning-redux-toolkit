@@ -7,11 +7,11 @@ const SinglePostPage = () => {
   const { postId } = useParams();
   const dispatch = useDispatch();
 
-  const post = useSelector((state) => state.singlePosts);
-  //   const postStatus = useSelector((state) => state.posts.status);
+  const singlePost = useSelector((state) => state.singlePost.list);
+    const postStatus = useSelector((state) => state.posts.status);
 
-    console.log(postId);
-  console.log(post);
+    console.log(postStatus);
+
 
   useEffect(() => {
     dispatch(getSinglePost(postId));
@@ -20,7 +20,7 @@ const SinglePostPage = () => {
   return (
     <div>
       <h2>hello</h2>
-
+      <p>{singlePost?.title}</p>
     </div>
   );
 };
